@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "Form List";
+}
+<script src="~/Assets/Scripts/Home/datacontext.js"></script>
+
+<script src="~/Assets/Scripts/Home/controller.js"></script>
+
+<div ng-controller="homeController as vm">
+    <div class="row" id="formlist">
+        <div class="col-sm-12 mb-2 form-inline row">
+            <div class="form-group col-sm-4">
+                <div>
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#newForm">Yeni Form Ekle</button>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-8" style="float:right;">
+                <div class="">
+                    <input type="text" name="name" value="" ng-model="vm.keyword" />
+                    <button class="btn btn-primary" ng-click="vm.getList()">Ara</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-12">
+
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr class="table-warning">
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="" ng-repeat="form in vm.datas">
+                        <th>{{form.name}}</th>
+                        <th>{{form.description}}</th>
+                       
+                        <th>
+                            <a class="btn btn-warning" href="/forms/{{form.id}}">Forma Git <i class="fas fa-angle-right"></i></a>
+                            <a class="btn btn-danger" ng-click="vm.DeleteForm(form)"> <i class="fas fa-trash-alt"></i></a>
+                        </th>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="modal" id="newForm">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Yeni Form Ekle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="saveForm" name="saveForm">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table ">
+                                        <tr>
+                                            <td width="20%"><label for="name">Form Adı :</label></td>
+                                            <td>
+                                                <input type="text" class="form-control" name="name" id="name" ng-model="vm.data.name" ng-required="true" />
+                                                <span class="label label-danger" ng-if="saveForm.name.$error.required && vm.submittedForm">Bu alan boş geçilemez.</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%"> <label for="description">Form Açıklaması :</label></td>
+                                            <td>
+                                                <input type="text" class="form-control" name="description" id="description" ng-model="vm.data.description" ng-required="true" />
+                                                <span class="label label-danger" ng-if="saveForm.description.$error.required && vm.submittedForm">Bu alan boş geçilemez.</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%"> <label for="description">Adet :</label></td>
+                                            <td>
+                                                <input type="number" class="form-control" ng-model="vm.CreatedCount" ng-required="true" />
+
+                                            </td>
+                                            <td colspan="3"><a class="btn btn-success" ng-click="vm.generate()">Alan Oluştur</a></td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="mt-2" ng-if="vm.showGenerated">
+                                        <table class="table">
+                                            <thead>
+                                                <tr class="table-warning">
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Data Type</th>
+                                                    <th scope="col">Required</th>
+                                                  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="new in vm.fileds">
+
+                                                    <td>
+                                                        <input type="text" class="form-control" ng-model="new.name" ng-required="true" />
+                                                       
+                                                    </td>
+                                                    <td>
+                                                        <select ng-model="new.dataType" ng-required="true">
+                                                            <option value="text">text</option>
+                                                            <option value="button">button</option>
+                                                            <option value="checkbox">checkbox</option>
+                                                            <option value="color">color</option>
+                                                            <option value="date">date</option>
+                                                            <option value="datetime">datetime</option>
+                                                            <option value="datetime-local">datetime-local</option>
+                                                            <option value="email">email</option>
+                                                            <option value="file">file</option>
+                                                            <option value="hidden">hidden</option>
+                                                            <option value="number">number</option>
+                                                            <option value="password">password</option>
+                                                            <option value="radio">radio</option>
+                                                            <option value="range">range</option>
+                                                            <option value="reset">reset</option>
+                                                            <option value="search">search</option>
+                                                            <option value="submit">submit</option>
+                                                            <option value="tel">tel</option>
+                                                            <option value="time">time</option>
+                                                            <option value="week">week</option>
+                                                            <option value="url">url</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select ng-model="new.required">
+                                                            <option value="true">True</option>
+                                                            <option value="false">False</option>
+
+                                                        </select>
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a ng-click="vm.saveForm(saveForm)" class="btn btn-primary">Save changes</a>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\AutoGenerateForm.Core.dll.config
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\AutoGenerateForm.Core.dll
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\AutoGenerateForm.Core.pdb
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\AutoGenerateForm.DATA.dll
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\EntityFramework.dll
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\AutoGenerateForm.DATA.pdb
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\AutoGenerateForm.DATA.dll.config
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\EntityFramework.xml
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\obj\Debug\AutoGenerateForm.Core.csprojAssemblyReference.cache
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\obj\Debug\AutoGenerateForm.Core.csproj.CoreCompileInputs.cache
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\obj\Debug\AutoGenerateForm.Core.csproj.CopyComplete
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\obj\Debug\AutoGenerateForm.Core.dll
+C:\Users\cglr1\source\repos\AutoGenerateForm\AutoGenerateForm.Core\obj\Debug\AutoGenerateForm.Core.pdb

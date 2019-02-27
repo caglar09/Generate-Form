@@ -1,0 +1,28 @@
+﻿#loginForm {
+    margin: 100px auto;
+    border: 1px solid #dedbdb;
+    padding: 30px 20px 10px;
+    border-radius: 25px;
+}
+
+    #loginForm .form-group a {
+        text-decoration: none !important;
+    }
+
+
+#formlist{
+    margin:30px auto;
+}
+
+.modal-dialog{
+    max-width:800px;
+}
+#newForm form label {
+    /*width: 19%;*/
+   float: right;
+}
+#newForm form input {
+    /*width: 80%;*/
+    display: inline-block;
+    float: right;
+}
